@@ -1,0 +1,36 @@
+{
+    "manifest_version": 2,
+    "name": "Auto Form Fields Filler",
+    "short_name": "AFFF",
+    "author": "Sandeep Kumar",
+    "developer": {
+        "name": "Sandeep Kumar",
+        "url": "http://cv.sktechblog.com"
+    },
+    "version": "1.0",
+    "description": "Fill all form fields automatically making development and testing easier. Right now it only supports input having type text, email and number and texareas too.Works with Angular also!!",
+    "icons": {
+        "48": "images/icons/auto-form-fields-filler-48.png",
+        "96": "images/icons/auto-form-fields-filler-96.png"
+    },
+    "permissions": [
+        "activeTab"            
+    ],
+    "background": {
+        "scripts": ["scripts/background.js"]
+    },
+    "content_scripts": [
+        {
+            "matches": ["*://*/*"],
+            "js": ["scripts/content.js"]
+        }
+    ],
+    "browser_action": {
+        "default_icon": {
+            "16": "images/icons/auto-form-fields-filler-16.png",
+            "32": "images/icons/auto-form-fields-filler-32.png",
+            "48": "images/icons/auto-form-fields-filler-48.png"
+        },
+        "default_title": "Click to fill up all form fields"
+    }
+}

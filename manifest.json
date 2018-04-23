@@ -7,8 +7,8 @@
         "name": "Sandeep Kumar",
         "url": "http://cv.sktechblog.com"
     },
-    "version": "1.0",
-    "description": "Fill all form fields automatically making development and testing easier. Right now it only supports input having type text, email and number and texareas too.Works with Angular also!!",
+    "version": "1.1",
+    "description": "Fill all form fields automatically making development and testing easier. Works with Angular also!!",
     "icons": {
         "48": "images/icons/auto-form-fields-filler-48.png",
         "96": "images/icons/auto-form-fields-filler-96.png"

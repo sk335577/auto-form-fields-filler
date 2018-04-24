@@ -1,11 +1,11 @@
 "use strict";
 
 var values = {
-    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+    text: 'Lorem ipsum dolor sit amet consectetur adipiscing elit',
     textarea: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam id enim at lacus maximus imperdiet semper in enim. Vestibulum varius bibendum condimentum. Morbi eget aliquam libero. Sed nec risus bibendum, facilisis ligula a, dignissim massa. Etiam ante justo, volutpat vitae euismod eget, viverra vitae dui. Praesent condimentum ultricies ligula at varius. Etiam nulla nisl, commodo a mi a, convallis porttitor enim. ',
     number: 99,
     email: 'email@somewhere.com',
-    name:'Sandeep Kumar'
+    name: 'Sandeep Kumar'
 };
 
 browser.runtime.onMessage.addListener(request => {

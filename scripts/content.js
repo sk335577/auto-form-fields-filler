@@ -30,22 +30,22 @@ browser.runtime.onMessage.addListener(request => {
 
     for (var i = 0; i < window.document.forms.length; i++) {
         for (var j = 0; j < window.document.forms[i].elements.length; j++) {
-            
+
             var randomFormDataRow = Math.floor(Math.random() * (1000 - 0 + 1)) + 0;
-            
+
             if (
-                    window.document.forms[i].elements[j].type != 'hidden' && 
-                    window.document.forms[i].elements[j].type != 'button' && 
-                    window.document.forms[i].elements[j].type != 'submit' && 
-                    window.document.forms[i].elements[j].disabled == false
-                    ) {
+                window.document.forms[i].elements[j].type != 'hidden' &&
+                window.document.forms[i].elements[j].type != 'button' &&
+                window.document.forms[i].elements[j].type != 'submit' &&
+                window.document.forms[i].elements[j].disabled == false
+            ) {
                 var tagName = (window.document.forms[i].elements[j].tagName).toLowerCase();
                 var somethingUpdated = false;
-               
+
                 switch (tagName) {
                     case 'input':
                         switch (window.document.forms[i].elements[j].type) {
-                            case 'text':                                               
+                            case 'text':
                                 if ((/email/).test(window.document.forms[i].elements[j].name)) {
                                     window.document.forms[i].elements[j].value = dummyData[randomFormDataRow].email;
                                 } else {
@@ -58,31 +58,31 @@ browser.runtime.onMessage.addListener(request => {
                                             if ((/(dob|date)/).test(window.document.forms[i].elements[j].name)) {
                                                 window.document.forms[i].elements[j].value = dummyData[randomFormDataRow].dob;
                                             } else {
-                                                   if ((/(phone|tel)/).test(window.document.forms[i].elements[j].name)) {
-                                                window.document.forms[i].elements[j].value = dummyData[randomFormDataRow].phone;
-                                            }else{
-                                                      if ((/(address)/).test(window.document.forms[i].elements[j].name)) {
-                                                window.document.forms[i].elements[j].value = dummyData[randomFormDataRow].address;
-                                            }else{
-                                                     if ((/(company)/).test(window.document.forms[i].elements[j].name) && (/(title)/).test(window.document.forms[i].elements[j].name)) {
-                                                window.document.forms[i].elements[j].value = dummyData[randomFormDataRow].company;
-                                            }else{
-                                                          if ((/(profile)/).test(window.document.forms[i].elements[j].name) && (/(description|bio|about)/).test(window.document.forms[i].elements[j].name)) {
-                                                window.document.forms[i].elements[j].value = dummyData[randomFormDataRow].about;
-                                            }else{
-                                                            if ((/(about)/).test(window.document.forms[i].elements[j].name)) {
-                                                window.document.forms[i].elements[j].value = dummyData[randomFormDataRow].about;
-                                            }else{
-                                                                 if ((/(username)/).test(window.document.forms[i].elements[j].name)) {
-                                                window.document.forms[i].elements[j].value = dummyData[randomFormDataRow].username;
-                                            }else{
-                                                window.document.forms[i].elements[j].value = dummyData[randomFormDataRow].title;
-                                            }
-                                            }
-                                            }
-                                            } 
-                                        }
-                                            }
+                                                if ((/(phone|tel)/).test(window.document.forms[i].elements[j].name)) {
+                                                    window.document.forms[i].elements[j].value = dummyData[randomFormDataRow].phone;
+                                                } else {
+                                                    if ((/(address)/).test(window.document.forms[i].elements[j].name)) {
+                                                        window.document.forms[i].elements[j].value = dummyData[randomFormDataRow].address;
+                                                    } else {
+                                                        if ((/(company)/).test(window.document.forms[i].elements[j].name) && (/(title)/).test(window.document.forms[i].elements[j].name)) {
+                                                            window.document.forms[i].elements[j].value = dummyData[randomFormDataRow].company;
+                                                        } else {
+                                                            if ((/(profile)/).test(window.document.forms[i].elements[j].name) && (/(description|bio|about)/).test(window.document.forms[i].elements[j].name)) {
+                                                                window.document.forms[i].elements[j].value = dummyData[randomFormDataRow].about;
+                                                            } else {
+                                                                if ((/(about)/).test(window.document.forms[i].elements[j].name)) {
+                                                                    window.document.forms[i].elements[j].value = dummyData[randomFormDataRow].about;
+                                                                } else {
+                                                                    if ((/(username)/).test(window.document.forms[i].elements[j].name)) {
+                                                                        window.document.forms[i].elements[j].value = dummyData[randomFormDataRow].username;
+                                                                    } else {
+                                                                        window.document.forms[i].elements[j].value = dummyData[randomFormDataRow].title;
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
                                             }
                                         }
                                     }
@@ -90,13 +90,13 @@ browser.runtime.onMessage.addListener(request => {
                                 somethingUpdated = true;
                                 break;
                             case 'number':
-                                                window.document.forms[i].elements[j].value = dummyData[randomFormDataRow].number;
+                                window.document.forms[i].elements[j].value = dummyData[randomFormDataRow].number;
                                 break;
                             case 'url':
-                                                window.document.forms[i].elements[j].value = dummyData[randomFormDataRow].website;
+                                window.document.forms[i].elements[j].value = dummyData[randomFormDataRow].website;
                                 break;
                             case 'email':
-                                                window.document.forms[i].elements[j].value = dummyData[randomFormDataRow].email;
+                                window.document.forms[i].elements[j].value = dummyData[randomFormDataRow].email;
                                 break;
                             case 'radio':
                             case 'checkbox':
@@ -124,17 +124,17 @@ browser.runtime.onMessage.addListener(request => {
                         var keyboardEvent = document.createEvent("KeyboardEvent");
                         var initMethod = typeof keyboardEvent.initKeyboardEvent !== 'undefined' ? "initKeyboardEvent" : "initKeyEvent";
                         keyboardEvent[initMethod](
-                                "keyup", // event type : keydown, keyup, keypress
-                                true, // bubbles
-                                true, // cancelable
-                                window, // viewArg: should be window
-                                false, // ctrlKeyArg
-                                false, // altKeyArg
-                                false, // shiftKeyArg
-                                false, // metaKeyArg
-                                40, // keyCodeArg : unsigned long the virtual key code, else 0
-                                0 // charCodeArgs : unsigned long the Unicode character associated with the depressed key, else 0
-                                );
+                            "keyup", // event type : keydown, keyup, keypress
+                            true, // bubbles
+                            true, // cancelable
+                            window, // viewArg: should be window
+                            false, // ctrlKeyArg
+                            false, // altKeyArg
+                            false, // shiftKeyArg
+                            false, // metaKeyArg
+                            40, // keyCodeArg : unsigned long the virtual key code, else 0
+                            0 // charCodeArgs : unsigned long the Unicode character associated with the depressed key, else 0
+                        );
                         window.document.forms[i].elements[j].dispatchEvent(keyboardEvent);
                     } else {
                         window.document.forms[i].elements[j].fireEvent("onchange");

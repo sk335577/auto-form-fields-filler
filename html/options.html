@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <style>
+            h2{text-align: center}
+            .form-row textarea,.form-row input{width: 95%}
+            .form-row label{font-weight: 400}
+            .help-text{font-weight: 200;}
+            
+        </style>
+    </head>
+
+    <body>
+
+
+        <h2>Use your own dummy data</h2>
+
+        <form>
+            <div class="form-row">
+                <label>Dummy Emails : </label>
+                <textarea id="dummy_emails" rows="5"></textarea>
+                <p class="help-text">Provide a list of emails you want to use while populating forms. Useful when you want to receive/test email notifications.</p>
+                <p class="help-text">Example : johncena@gmail.com, sethrollins@gmail.com, chrisjericho@gmail.com</p>
+                <p class="help-text">*Don't worry about the spaces before or after the comma between emails</p>
+            </div>
+            <div class="form-row">
+                <label>Dummy Names : </label>
+                <textarea id="dummy_names" rows="5"></textarea>
+                <p class="help-text">Provide a list of names you want to use while populating forms.</p>
+                <p class="help-text">Example : John Cena, Seth Rollins, Chris Jericho</p>
+            </div>
+            <div class="form-row">
+                <label>Dummy Password : </label>
+                <input type="text" id="dummy_password" />
+                <p class="help-text">Provide a dummy password you want to use while populating forms. All fields having password type will be filled with this password.</p>
+                <p class="help-text">Example : Qwerty@123#</p>
+            </div>
+            <button type="reset">Reset</button>
+            <button type="submit">Save</button>
+            <p class="help-text">Make sure you click save after clicking reset</p>
+            <div id="message"></div>
+        </form>
+
+        <script src="/scripts/options.js"></script>
+
+    </body>
+
+</html>

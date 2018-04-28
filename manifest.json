@@ -7,7 +7,7 @@
         "name": "Sandeep Kumar",
         "url": "http://cv.sktechblog.com"
     },
-    "version": "1.5",
+    "version": "1.6",
     "description": "Fill all form fields automatically making development and testing easier. Ready made 5000 profiles which can be populated randomly with just a click. Plus you can provide your own emails and passwords to populate in the forms from the addons options page. It works with Angular also so the your javascript variables will be updated also. ",
     "icons": {
         "48": "images/icons/auto-form-fields-filler-48.png",

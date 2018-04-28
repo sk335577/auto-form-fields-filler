@@ -30,10 +30,12 @@ var dummyPassword='Qwerty@123#';
 
 var dummyStoredPassword = browser.storage.local.get("dummy_password");
 dummyStoredPassword.then(function (res) {    
+    if(res.dummy_password){
    var dummy_password=res.dummy_password;
    dummy_password=dummy_password.trim();
    if(dummy_password && dummy_password!=''){
       dummyPassword = dummy_password;
+   }
    }
 
 }, function (res) {
@@ -44,6 +46,7 @@ dummyStoredPassword.then(function (res) {
 var customDummyEmails = [];
 var dummyStoredEmails = browser.storage.local.get("dummy_emails");
 dummyStoredEmails.then(function (res) {
+ if(res.dummy_emails){
     var t = (res.dummy_emails).split(',');
     for (var i = 0; i < t.length; i++) {
         t[i] = t[i].trim();
@@ -51,6 +54,7 @@ dummyStoredEmails.then(function (res) {
 
             customDummyEmails.push(t[i]);
         }
+    }
     }
 
 }, function (res) {
@@ -61,12 +65,14 @@ dummyStoredEmails.then(function (res) {
 var customDummyNames = [];
 var dummyStoredNames = browser.storage.local.get("dummy_names");
 dummyStoredNames.then(function (res) {
+ if(res.dummy_names){
     var t = (res.dummy_names).split(',');
     for (var i = 0; i < t.length; i++) {
         t[i] = t[i].trim();
         if (t[i] && t[i] != '') {
             customDummyNames.push(t[i]);
         }
+    }
     }
 
 }, function (res) {
